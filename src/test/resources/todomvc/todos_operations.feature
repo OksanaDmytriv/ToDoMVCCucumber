@@ -11,7 +11,7 @@ Feature: Todos operations at All Filter
   Scenario: Edit task
     Given add tasks: a, b
 
-    And edit task 'a' to have text 'a edited'
+    When edit task 'a' to have text 'a edited'
     Then tasks are: a edited, b
 
   Scenario: Cancel edit task
@@ -37,17 +37,16 @@ Feature: Todos operations at All Filter
     Given add tasks: a, b
 
     When toggle task 'a'
-    Then visible tasks are: b
+    Then tasks are: a, b
     And items left counter shows: 1
 
   Scenario: Activate task
     Given add tasks: a, b
+    And toggle task 'b'
 
     When toggle task 'b'
-    Then visible tasks are: a
-    And items left counter shows: 1
-    When toggle task 'b'
     Then tasks are: a, b
+    And items left counter shows: 2
 
   Scenario: Complete and activate all tasks
     Given add tasks: a, b
@@ -65,4 +64,3 @@ Feature: Todos operations at All Filter
     Then there is no tasks left
     And clear completed button should be hidden
 
-    
