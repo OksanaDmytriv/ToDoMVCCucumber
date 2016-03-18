@@ -17,7 +17,7 @@ import static core.CustomConditions.exactTexts;
 public class TodosStepdefs {
 
     public static SelenideElement newTask = $("#new-todo");
-    public static ElementsCollection tasks = $$("#todo-list>li");
+    public static ElementsCollection tasks = $$("#todo-list li");
 
     @Given("^open TodoMVC page$")
     public void openTodoMVCPage() {
