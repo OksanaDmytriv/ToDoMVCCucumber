@@ -48,7 +48,7 @@ Feature: Todos operations at All Filter
     Then tasks are: a, b
     And items left counter shows: 2
 
-  Scenario: Complete and activate all tasks
+  Scenario: Activate all tasks
     Given add tasks: a, b
     And toggle all tasks
 
@@ -56,7 +56,7 @@ Feature: Todos operations at All Filter
     Then tasks are: a, b
     And items left counter shows: 2
 
-  Scenario: Check all and clear
+  Scenario: Clear completed tasks
     Given add tasks: a, b
     And toggle all tasks
 
